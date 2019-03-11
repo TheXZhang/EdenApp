@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/f_robot_battery_status_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Battery status"
+            android:gravity="start"/>
+
+        <TextView
+            android:id="@+id/f_robot_battery_status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:gravity="end"/>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/f_robot_water_status_label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water status"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/f_robot_water_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100%"
+            android:layout_gravity="end"/>
+    </FrameLayout>
+</LinearLayout>
