@@ -81,9 +81,9 @@ public class PictureTagLayout extends RelativeLayout implements OnTouchListener{
             case MotionEvent.ACTION_UP:
                 int endX = (int) event.getX();
                 int endY = (int) event.getY();
-                //如果挪动的范围很小，则判定为单击
+                //if the moving distance is very small, treat it as a single click
                 if(touchView!=null&&Math.abs(endX - startX)<CLICKRANGE&&Math.abs(endY - startY)<CLICKRANGE){
-                    //当前点击的view进入编辑状态
+                    //entering edit mode
                     ((PictureTagView)touchView).setStatus(Status.Edit);
                     clickView = touchView;
                 }
@@ -107,7 +107,6 @@ public class PictureTagLayout extends RelativeLayout implements OnTouchListener{
         }
 
         params.topMargin = y;
-        //上下位置在视图内
         if(params.topMargin<0)params.topMargin =0;
         else if((params.topMargin+PictureTagView.getViewHeight())>getHeight())params.topMargin = getHeight() - PictureTagView.getViewHeight();
 
@@ -119,13 +118,11 @@ public class PictureTagLayout extends RelativeLayout implements OnTouchListener{
         RelativeLayout.LayoutParams params=new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
         params.leftMargin = x - startX + startTouchViewLeft;
         params.topMargin = y - startY + startTouchViewTop;
-        //限制子控件移动必须在视图范围内
         if(params.leftMargin<0||(params.leftMargin+touchView.getWidth())>getWidth())params.leftMargin = touchView.getLeft();
         if(params.topMargin<0||(params.topMargin+touchView.getHeight())>getHeight())params.topMargin = touchView.getTop();
         touchView.setLayoutParams(params);
     }
     private boolean hasView(int x,int y){
-        //循环获取子view，判断xy是否在子view上，即判断是否按住了子view
         for(int index = 0; index < this.getChildCount(); index ++){
             View view = this.getChildAt(index);
             int left = (int) view.getX();
@@ -134,7 +131,6 @@ public class PictureTagLayout extends RelativeLayout implements OnTouchListener{
             int bottom = view.getBottom();
             Rect rect = new Rect(left, top, right, bottom);
             boolean contains = rect.contains(x, y);
-            //如果是与子view重叠则返回真,表示已经有了view不需要添加新view了
             if(contains){
                 touchView = view;
                 touchView.bringToFront();

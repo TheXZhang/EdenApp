@@ -34,20 +34,20 @@ public class PictureTagView extends RelativeLayout implements OnEditorActionList
         initEvents();
     }
 
-    /** 初始化视图 **/
+
     protected void initViews(){
         LayoutInflater.from(context).inflate(R.layout.picturetagview, this,true);
         tvPictureTagLabel = (TextView) findViewById(R.id.tvPictureTagLabel);
         etPictureTagLabel = (EditText) findViewById(R.id.etPictureTagLabel);
         loTag = findViewById(R.id.loTag);
     }
-    /** 初始化 **/
+
     protected void init(){
         imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
         directionChange();
     }
 
-    /** 初始化事件 **/
+
     protected void initEvents(){
         //etPictureTagLabel.setOnEditorActionListener(this);
     }
@@ -59,14 +59,14 @@ public class PictureTagView extends RelativeLayout implements OnEditorActionList
                 etPictureTagLabel.clearFocus();
                 tvPictureTagLabel.setText(etPictureTagLabel.getText());
                 etPictureTagLabel.setVisibility(View.GONE);
-                //隐藏键盘
+                //hide keyboard
                 imm.hideSoftInputFromWindow(etPictureTagLabel.getWindowToken() , 0);
                 break;
             case Edit:
                 tvPictureTagLabel.setVisibility(View.GONE);
                 etPictureTagLabel.setVisibility(View.VISIBLE);
                 etPictureTagLabel.requestFocus();
-                //弹出键盘
+                //showing keyboard
                 imm.toggleSoftInput(0, InputMethodManager.SHOW_FORCED);
                 break;
         }*/

@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         android:exported="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".PictureTagMain"
+        <activity android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,7 @@
         <activity android:name=".Create_account" />
         <activity android:name=".Eden_main"
             android:label=""/>
-        <activity android:name=".SplashScreen" />
+        <activity android:name=".PictureTagMain" />
     </application>
 
 </manifest>
